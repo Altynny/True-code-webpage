@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0;
+}
+
+.logo{
+    left: 0;
+    margin-right: auto;
+}
+
+.menu-button {
+    border: 3px solid white;
+}
+
+.menu-button a, .menu-button a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.contact-number {
+    border: 3px solid orange;
+    border-radius: 20%;
+}
