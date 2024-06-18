@@ -1,27 +1,71 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: -2;
+    opacity: 0.4;
+}
+
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(254, 254, 254, 1));
+}
+
 header {
+    margin-top: 2vh;
+    width: 100vw;
     display: flex;
     position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 0;
+}
+
+.menu {
+    width: 50%;
+    gap: 2vw;
+    display: flex;
+    margin-left: 50vw;
+    margin: 0%;
 }
 
 .logo{
-    left: 0;
+    margin-top: -2vh;
     margin-right: auto;
 }
 
-.menu-button {
-    border: 3px solid white;
+.logo-img {
+    width: 8vw;
 }
 
-.menu-button a, .menu-button a:active {
-    text-decoration: none;
-    color: black;
+.menu-button {
+    white-space: nowrap;
+    font-size: 1.2vw;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    font-weight: bolder;
 }
 
 .contact-number {
-    border: 3px solid orange;
-    border-radius: 20%;
+    white-space: nowrap;
+    font-size: 1.2vw;
+}
+
+.number-border {
+    outline: 1px solid grey;
+    border-radius: 8%;
+    outline-offset: 2px;
 }
