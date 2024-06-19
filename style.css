@@ -25,6 +25,7 @@ html, body {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(254, 254, 254, 1));
 }
 
+
 header {
     margin-top: 2vh;
     width: 100vw;
@@ -68,4 +69,86 @@ header {
     outline: 1px solid grey;
     border-radius: 8%;
     outline-offset: 2px;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 6vh;
+    margin-left: 45vw;
+}
+
+.hotel {
+    position: absolute;
+    font-size: 1.6vw;
+    white-space: nowrap;
+    margin-top: 3vw;
+    margin-left: 2.8vw;
+}
+
+.hotel-label {
+    font-family: Arial Narrow, sans-serif;
+    color: darkgreen;
+    font-size: 15vw;
+}
+
+.hotel-label::before {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-size: 23vw;
+    content: "Л";
+}
+
+.vacation {
+    white-space: nowrap;
+    font-size: 2.5vw;
+    margin-top: -4vw;
+    margin-left: 16.5vw;
+}
+
+
+.main2 {
+    display: flex;
+    position: absolute;
+    margin-left: 55vw;
+    bottom: 20vh;
+    width: 15vh;
+    height: 20vh;
+}
+
+.main2-1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: -3vh;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+}
+
+.price span {
+    font-size: 2vh;
+    color: #A66A00;
+    white-space: nowrap;
+}
+
+.price span:first-child {
+    margin-left: 0.3vh;
+}
+
+.price span:nth-child(2) {
+    font-size: 5vh;
+    margin-top: -1vh;
+}
+
+.price span:nth-child(3) {
+    margin-top: -1vh;
+    margin-left: 9vh;
+}
+
+.facilities {
+    margin-top: 1vh;
+    font-size: 1.47vh;
 }
