@@ -57,7 +57,7 @@ header {
 }
 
 .menu-button:hover {
-    font-weight: bolder;
+    color: darkgreen;
 }
 
 .contact-number {
@@ -151,4 +151,100 @@ header {
 .facilities {
     margin-top: 1vh;
     font-size: 1.47vh;
+}
+
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 70vw;
+    height: 8vh;
+    bottom: 6vh;
+    left: 30vw;
+    background-color: #A66A00;
+    outline: 1px solid #A66A00;
+    outline-offset: 2px;
+}
+
+.booking > img {
+    position: absolute;
+    width: 10vh;
+    bottom: 8.1vh;
+    left: 30vw;
+}
+
+.booking img:nth-child(2) {
+    rotate: 180deg;
+    bottom: -2.9vh;
+}
+
+.inner-booking {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 2vw;
+}
+
+.inner-booking span:nth-child(1) {
+    margin-left: 2vh;
+    font-weight: bolder;
+    font-size: 1.05vh;
+    white-space: nowrap;
+}
+
+.noname {
+    display: flex;
+    padding-right: 0.8vh;
+    padding-left: 0.8vh;
+    height: 4vh;
+    width: fit-content;
+    border-radius: 5%;
+    background-color: white;
+    font-weight: bolder;
+    cursor:default;
+}
+
+.noname img {
+    align-self:center;
+    height: 1.5vh;
+}
+
+.noname div {
+    width: fit-content;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.noname div span:nth-child(1) {
+    margin-left: 1vw;
+    color: grey;
+    font-size: 1.4vh;
+}
+
+.noname div input {
+    margin-left: 1vw;
+    height: 1.2vh;
+    width: 2.8vh;
+}
+
+.inner-booking div:nth-child(5){
+    display: flex;
+    align-items: center;
+    background-color: yellow;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.inner-booking div:nth-child(5) span{
+    font-size: 1.2vh;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.inner-booking div:nth-child(5):hover{
+    background-color: green;
 }
