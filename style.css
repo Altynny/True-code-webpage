@@ -1,30 +1,10 @@
 html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 100vh;
     margin: 0;
-    z-index: -2;
-    opacity: 0.4;
 }
 
-.background-blur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    z-index: -1;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(254, 254, 254, 1));
-}
-
+/* Шапка сайта */
 
 header {
     margin-top: 2vh;
@@ -66,13 +46,44 @@ header {
 }
 
 .number-border {
-    outline: 1px solid grey;
+    outline: 1px solid orange;
     border-radius: 8%;
     outline-offset: 2px;
 }
 
+/* Страницы */
 
-.main {
+.page {
+    height: 100vh;
+}
+
+.background {
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: -2;
+    opacity: 0.4;
+}
+
+.background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(254, 254, 254, 1));
+}
+
+.heading {
     display: flex;
     flex-direction: column;
     position: absolute;
