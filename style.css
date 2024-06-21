@@ -669,3 +669,21 @@ header {
 .check-room:hover {
     background-color: darkgreen;
 }
+
+.arrowLeft {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    margin-right: 77vw;
+    width: 3vw;
+    height: 3vw;
+}
+
+.arrowRight {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    margin-left: 77vw;
+    width: 3vw;
+    height: 3vw;
+}

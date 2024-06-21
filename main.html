@@ -185,7 +185,9 @@
         </div>
         <div>
             <div class="slider">
-                <div class="slide-isnot-active">
+                <div class="arrowLeft"></div>
+                <div class="arrowRight"></div>
+                <div class="slide-isnot-active slide">
                     <img src="img/rooms/slider-room1.jpg">
                     <div class="slider-label">
                         <div class="slider-name">КОТТЕДЖ</div>
@@ -211,9 +213,9 @@
                             <div class="check-room">Обзор коттеджа</div>
                         </div>
                     </div>
-                    <span class="slider-left-label">КОТТЕДЖ</span>
+                    <span class="slider-left-label side-label">КОТТЕДЖ</span>
                 </div>
-                <div class="slide-is-active"> 
+                <div class="slide-is-active slide"> 
                     <img src="img/rooms/slider-room2.jpg">
                     <div class="slider-label">
                         <div class="slider-name">ЛЮКС СУПЕРИОР</div>
@@ -238,10 +240,10 @@
                             <div class="check-room">Посмотреть номер</div>
                         </div>
                     </div>
-                    <span>ЛЮКС
+                    <span class="side-label">ЛЮКС
                         СУПЕРИОР</span>
                 </div>
-                <div class="slide-isnot-active">
+                <div class="slide-isnot-active slide">
                     <img src="img/rooms/slider-room3.jpg">
                     <div class="slider-label">
                         <div class="slider-name">Vip Вилла</div>
@@ -267,7 +269,7 @@
                             <div class="check-room">Посмотреть виллу</div>
                         </div>
                     </div>
-                    <span class="slider-right-label">VIP
+                    <span class="slider-right-label side-label">VIP
                         ВИЛЛА
                     </span>
                 </div>
@@ -300,6 +302,52 @@
           observer.observe(elm);
         }
       
+        // Слайдер
+
+        const leftArrow = document.querySelector('.arrowLeft');
+        const rightArrow = document.querySelector('.arrowRight');
+
+        function sliderRight() {
+            let slides = document.getElementsByClassName('slide');
+
+            slides[2].after(slides[0]);
+
+            giveClasses();
+        }
+
+        function sliderLeft() {
+            let slides = document.getElementsByClassName('slide');
+
+            slides[0].before(slides[2]);
+
+            giveClasses();
+        }
+
+        function giveClasses() {
+            let slides = document.getElementsByClassName('slide');
+            let labels = document.getElementsByClassName('side-label');
+
+            for (let slide of slides) {
+                slide.classList.remove('slide-is-active');
+                slide.classList.add('slide-isnot-active');
+            }
+
+            
+            slides[1].classList.remove('slide-isnot-active');
+            slides[1].classList.add('slide-is-active');
+
+            for (let label of labels) {
+                label.classList.remove('slider-left-label');
+                label.classList.remove('slider-right-label');
+            }
+
+            labels[0].classList.add('slider-left-label');
+            labels[2].classList.add('slider-right-label');
+        }
+
+        leftArrow.addEventListener('click', sliderLeft);
+        rightArrow.addEventListener('click', sliderRight);
+        
     </script>
 </body>
 </html>
