@@ -449,14 +449,13 @@ header {
     display: flex;
     flex-direction: column;
     background-color: lightgray;
-    margin-top: -12vw;
     height: fit-content;
+    margin-top: -12vw;
     width: 20vw;
 }
 
 .room-facilities {
     display: flex;
-    height: fit-content;
     gap: 2vw;
     height: 14vw;
 }
@@ -473,13 +472,14 @@ header {
 }
 
 .room-price {
+    margin-top: 2vw;
     display: flex;
     height: fit-content;
     cursor: default;
     width: 100%;
     border-top: 0.1vw grey solid;
     border-left: 0.2vw solid darkgreen;
-    gap: 2vw;
+    gap: 1.5vw;
 }
 
 .room-price div:nth-child(1) {
@@ -511,5 +511,161 @@ header {
 }
 
 .room-price > div:nth-child(2):hover {
+    background-color: darkgreen;
+}
+
+.slider {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10vw;
+    margin-top: 58vw;
+    width: 80vw;
+    height: 30vw;
+}
+
+.slider::before {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    margin-right: 77vw;
+    margin-top: 0.5vw;
+    content: "\27A4";
+    rotate: 180deg;
+    font-size: 2.5vw;
+}
+
+.slider::after {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    margin-left: 77vw;
+    content: "\27A4";
+    font-size: 2.5vw;
+}
+
+.slider > div {
+    display: flex;
+}
+
+.slide-is-active {
+    position: relative;
+    width: 60vw;
+    margin-right: -5vw;
+    margin-left: -5vw;
+}
+
+.slide-isnot-active {
+    width: 30vw;
+    background-color: rgb(255, 248, 220);
+    outline: 0.2vw rgb(116, 107, 14) solid;
+    outline-offset: 0.8vw;
+    border-radius: 5%;
+}
+
+.slide-is-active img {
+    width: 30vw;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+
+.slide-isnot-active img {
+    width: 15vw;
+    outline: 0.3vw rgb(224, 208, 29) solid;
+    outline-offset: 0.3vw;
+    border-radius: 5%;
+    opacity: 0.5;
+}
+
+.slide-isnot-active div {
+    display: none;
+}
+
+.slider-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background-color: white;
+    width: 50vw;
+    border-right: 0.3vw darkgreen solid;
+    border-top: 0.3vw darkgreen solid;
+    border-bottom: 0.3vw darkgreen solid;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+
+.slide-is-active span {
+    display: none;
+}
+
+.slide-isnot-active span {
+    position: absolute;
+    align-self: center;
+    font-size: 1.1vw;
+    width: 5vw;
+    font-weight: bolder;
+}
+
+.slider-left-label {
+    margin-left: 3vw;
+}
+
+.slider-right-label {
+    margin-left: 6vw;
+}
+
+.slider-name {
+    font-size: 1.8vw;
+    margin-top: 2vw;
+    margin-left: 3vw;
+}
+
+.slider-room-description {
+    margin-top: 2vw;
+    margin-left: 3vw;
+    margin-right: 0.5vw;
+    font-size: 1.3vw;
+}
+
+.slider-facilities {
+    margin-top: 1vw;
+    margin-right: 0.5vw;
+    font-size: 1.3vw;
+}
+
+.slider-description-footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vw;
+    align-self: center;
+}
+
+.slider-price {
+    display: flex;
+    margin-bottom: 4vw;
+    gap: 1.2vw;
+    font-size: 1.8vw;
+}
+
+.slider-price div:nth-child(2) {
+    font-size: 2.5vw;
+}
+
+.check-room {
+    z-index: 1;
+    position: absolute;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 5.9vw;
+    background-color: rgb(255, 217, 0);
+    outline: 0.2vw rgb(116, 107, 14) solid;
+    outline-offset: 0.2vw;
+    border-radius: 10%;
+    transition: 0.3s ease-in-out;
+}
+
+.check-room:hover {
     background-color: darkgreen;
 }
