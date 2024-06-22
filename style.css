@@ -523,6 +523,14 @@ header {
     margin-top: 58vw;
     width: 80vw;
     height: 30vw;
+
+    opacity: 0;
+    transition: 1s;
+}
+
+.show .slider {
+    opacity: 1;
+    transition: 1s 3s;
 }
 
 .slider::before {
