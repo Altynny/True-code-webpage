@@ -274,79 +274,42 @@
                 </div>
             </div>
         </div>
+        <div class="reserve">
+            <img src="img/rooms/reserve.jpg" class="reserve-img">
+            <div class="reserve-description">
+                <img src="img/pattern2.png">
+                <div>
+                    <div class="welcome">ДОБРО ПОЖАЛОВАТЬ<br> В ОТЕЛЬ-ЗАПОВЕДНИК "ЛЕСНОЕ"</div>
+                    <div class="reserve-text">
+                        <p>Отель-заповедник "Лесное" - прекрасное место для
+                        настоящих ценителей кристально свежего воздуха
+                        и живописных красот настоящей Русской природы. 
+                        В нашем отеле вас ждут светлые и уютные
+                        с замечательным видом на живой хвойный лес,
+                        высокий уровень обслуживания и развлечения 
+                        на любой вкус.</p>
+                        Общая территория отеля "Лесное" - 682 гектара,
+                        куда входят: луга, лесной массив и 11 природных
+                        озер, 89 просторных и светлых номеров категорий 
+                        стандарт, люкс, коттедж т VIP вилла.<p></p>
+    
+                        Ресторан на 250 персон, в котором вы сможете
+                        по достоинству оценить русскую, итальянскую,
+                        кавказскую, французскую и европейскую кухни.
+                        Наши повара используют только самые свежие
+                        продукты, которые поставляются из собственного
+                        подсобного хозяйства.
+                    </div>
+                    <div class="check-reserve">Обзор территории</div>
+                </div>
+                <img src="img/pattern2.png">
+            </div>
+            <img src="img/reserve-deer.png" class="reserve-deer">
+        </div>
     </div>
 
 
-    <script>
-        function onEntry(entry) 
-        {
-          entry.forEach(change => 
-          {
-            if (change.isIntersecting) 
-            {
-             change.target.classList.add('show');
-            }
-            else 
-            {
-              change.target.classList.remove('show');
-            }
-          });
-        }
-  
-        let options = {threshold: [0.5]};
-        let observer = new IntersectionObserver(onEntry, options);
-        let elements = document.querySelectorAll('.animated');
-        
-        for (let elm of elements) {
-          observer.observe(elm);
-        }
-      
-        // Слайдер
+    <script src="scripts/script.js"></script>
 
-        const leftArrow = document.querySelector('.arrowLeft');
-        const rightArrow = document.querySelector('.arrowRight');
-
-        function sliderRight() {
-            let slides = document.getElementsByClassName('slide');
-
-            slides[2].after(slides[0]);
-
-            giveClasses();
-        }
-
-        function sliderLeft() {
-            let slides = document.getElementsByClassName('slide');
-
-            slides[0].before(slides[2]);
-
-            giveClasses();
-        }
-
-        function giveClasses() {
-            let slides = document.getElementsByClassName('slide');
-            let labels = document.getElementsByClassName('side-label');
-
-            for (let slide of slides) {
-                slide.classList.remove('slide-is-active');
-                slide.classList.add('slide-isnot-active');
-            }
-
-            
-            slides[1].classList.remove('slide-isnot-active');
-            slides[1].classList.add('slide-is-active');
-
-            for (let label of labels) {
-                label.classList.remove('slider-left-label');
-                label.classList.remove('slider-right-label');
-            }
-
-            labels[0].classList.add('slider-left-label');
-            labels[2].classList.add('slider-right-label');
-        }
-
-        leftArrow.addEventListener('click', sliderLeft);
-        rightArrow.addEventListener('click', sliderRight);
-        
-    </script>
 </body>
 </html>
