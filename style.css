@@ -266,7 +266,7 @@ header {
     white-space: nowrap;
 }
 
-.noname {
+.form-button {
     display: flex;
     padding-right: 0.8vh;
     padding-left: 0.8vh;
@@ -278,12 +278,12 @@ header {
     cursor:default;
 }
 
-.noname img {
+.form-button img {
     align-self:center;
     height: 1.5vh;
 }
 
-.noname div {
+.form-button div {
     width: fit-content;
     align-self: center;
     display: flex;
@@ -291,13 +291,13 @@ header {
     justify-content: center;
 }
 
-.noname div span:nth-child(1) {
+.form-button div span:nth-child(1) {
     margin-left: 1vw;
     color: grey;
     font-size: 1.4vh;
 }
 
-.noname div input {
+.form-button div input {
     margin-left: 1vw;
     height: 1.2vh;
     width: 5vh;
