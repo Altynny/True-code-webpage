@@ -285,7 +285,7 @@ header {
     white-space: nowrap;
 }
 
-.noname {
+.form-button {
     display: flex;
     padding-right: 0.8vh;
     padding-left: 0.8vh;
@@ -296,30 +296,25 @@ header {
     cursor:default;
 }
 
-.noname img {
+.form-button img {
     align-self:center;
     height: 1.5vh;
 }
 
-<<<<<<< Updated upstream:style.css
-.noname div {
-    width: fit-content;
-=======
 .form-button div {
->>>>>>> Stashed changes:styles/pc.css
     align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.noname div span:nth-child(1) {
+.form-button div span:nth-child(1) {
     margin-left: 1vw;
     color: grey;
     font-size: 1.4vh;
 }
 
-.noname div input {
+.form-button div input {
     margin-left: 1vw;
     height: 1.2vh;
     width: 10vw;
@@ -559,14 +554,6 @@ header {
     margin-top: 58vw;
     width: 80vw;
     height: 30vw;
-
-    opacity: 0;
-    transition: 1s;
-}
-
-.show .slider {
-    opacity: 1;
-    transition: 1s 3s;
 }
 
 .slider::before {
@@ -703,6 +690,7 @@ header {
     align-self: center;
     cursor: pointer;
     margin-top: 5.9vw;
+    font-size: 2vw;
     background-color: rgb(255, 217, 0);
     outline: 0.2vw rgb(116, 107, 14) solid;
     outline-offset: 0.2vw;
@@ -713,3 +701,116 @@ header {
 .check-room:hover {
     background-color: darkgreen;
 }
+
+.arrowLeft {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    margin-right: 77vw;
+    width: 3vw;
+    height: 3vw;
+}
+
+.arrowRight {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    margin-left: 77vw;
+    width: 3vw;
+    height: 3vw;
+}
+
+
+/* 3 страница */
+
+.reserve {
+    display: flex;
+    align-content: center;
+    position: absolute;
+    padding-top: 105vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.reserve-img {
+    width: 40vw;
+    margin-top: 1.5vw;
+    height:min-content;
+}
+
+.reserve-description {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-left: 22vw;
+    width: 40vw;
+}
+
+.reserve-description img {
+    width: 18vw;
+    margin-left: 20vw;
+}
+
+.reserve-description img:nth-child(1) {
+    rotate: 180deg;
+}
+
+.reserve-description img:nth-child(3) {
+    margin-top: 1.6vw;
+    margin-left: 20vw;
+}
+
+.reserve-description > div {
+    margin-top: 0.3vw;
+    padding: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 0.2vw rgb(224, 208, 29) solid;
+    outline: 0.2vw rgb(116, 107, 14) solid;
+    outline-offset: 0.4vw;
+    border-radius: 5%;
+}
+
+.welcome {
+    font-size: 1.6vw;
+    font-weight: bolder;
+}
+
+.reserve-text {
+    font-size: 1.5vw;
+    padding-bottom: 1vw;
+}
+
+.check-reserve {
+    z-index: 2;
+    display: flex;
+    position: absolute;
+    font-size: 1.6vw;
+    font-weight: bolder;
+    align-self: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 40.3vw;
+    margin-left: 18vw;
+    height: 3vw;
+    background-color: rgb(255, 217, 0);
+    outline: 0.2vw rgb(116, 107, 14) solid;
+    outline-offset: 0.15vw;
+    border-radius: 5%;
+    transition: 0.3s ease-in-out;
+}
+
+.check-reserve:hover {
+    background-color: darkgreen;
+}
+
+.reserve-deer {
+    padding-top: 2vw;
+    z-index: 1;
+    width: 35vw;
+    height: min-content;
+    padding-left: 16vw;
+}
+
