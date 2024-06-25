@@ -1,3 +1,4 @@
+// Анимации при скролле
 function onEntry(entry) {
     entry.forEach(change => 
     {
