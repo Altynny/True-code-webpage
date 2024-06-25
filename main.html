@@ -4,29 +4,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/pc.css" media="screen and (min-width: 1200px)" type="text/css" rel="stylesheet">
     <link href="styles/tablet.css" media="screen and (min-width: 960px) and (max-width: 1200px)" type="text/css" rel="stylesheet">
-    <link href="styles/phone.css" media="screen (max-width: 960px)" type="text/css" rel="stylesheet">
+    <link href="styles/phone.css" media="screen and (max-width: 960px)" type="text/css" rel="stylesheet">
     <title>Главная страница</title>
 </head>
 <body>
 
 
     <!-- Шапка -->
+
     <header>
         <div class="logo">
             <img src="img/logoplaceholder.png" class="logo-img">
         </div>
         <div class="menu">
             <div class="menu-button">
-                ОБ ОТЕЛЕ
+                <a href="">ОБ ОТЕЛЕ</a>
             </div>
             <div class="menu-button">
-                НОМЕРА И ЦЕНЫ
+                <a href="">НОМЕРА И ЦЕНЫ</a>
             </div>
             <div class="menu-button">
-                МЕРОПРИЯТИЯ
+                <a href="">МЕРОПРИЯТИЯ</a>
             </div>
             <div class="menu-button">
-                КОНТАКТЫ
+                <a href="">КОНТАКТЫ</a>
             </div>
             <div class="contact-number">
                 <span class="number-border">+7 (495) 005-61-59</span>
@@ -34,44 +35,42 @@
         </div>
     </header>
 
-
     <!-- Страницы -->
 
     <div class="page animated">
+
         <div class="background">
             <div class="background-blur"></div>
         </div>
 
-        <img src="img/winter.gif" class="deer"/>
+        <div class="heading">
+            <span>Лесное</span>
+        </div>
 
-        <span class="heading">
-            <span class="hotel">отель-заповедник</span>
-            <span class="hotel-label">есное</span>
-            <span class="vacation">премиальный отдых в москве</span>
-        </span>
+        <div class="deer"></div>
 
-        <span class="details">
+        <div class="details">
             <img src="img/pattern.png">
-            <span>
-                <span class="price">
+            <div>
+                <div class="price">
                     <span>от</span>
-                    <span>5 500 Р</span>
+                    <span>5500</span>
                     <span>в сутки</span>
-                </span>
-                <span class="facilities">
-                    4х разовое питание и all inclusive.
-                    собственное подсобное хозяйство,
-                    бассейн, баня, конный двор 
-                    и контактный зоопарк
-                </span>
-            </span>
-        </span>
+                </div>
+                <div class="facilities">
+                    4-х разовое питание и all inclusive.<br>
+                    Cобственное подсобное хозяйство, бассейн,<br> 
+                    баня, конный двор<br> и контактный зоопарк
+                </div>
+            </div>
+        </div>
 
         <div class="booking">
             <img src="img/pattern2.png">
-            <img src="img/pattern2.png">
             <div class="inner-booking">
+                
                 <span>БРОНИРОВАНИЕ НОМЕРОВ</span>
+
                 <div class="form-button">
                     <img src="img/calendar.png">
                     <div>
@@ -79,6 +78,7 @@
                         <input type="date"></input>
                     </div>
                 </div>
+
                 <div class="form-button">
                     <img src="img/calendar.png">
                     <div>
@@ -86,19 +86,23 @@
                         <input type="date"></input>
                     </div>
                 </div>
+
                 <div class="form-button">
                     <img src="img/avatar.png">
                     <div>
                         <span>Гости</span>
-                        <input type="number" min="1" max="4"></input>
+                        <input type="number" id="guests" min="1" max="20" step="1" value="1"></input>
                     </div>
                 </div>
+
                 <div class="form-button">
                     <span>Найти номер</span>
                 </div>
-                <div></div>
+
             </div>
+            <img src="img/pattern2.png">
         </div>
+
     </div>
 
 
