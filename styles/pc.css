@@ -1,11 +1,16 @@
 html, body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
 }
 
 input {
     border: none;
-    cursor: text;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 ::-webkit-scrollbar {
@@ -13,53 +18,63 @@ input {
 }
 
 .page {
-    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 4vw;
+}
+
+.page:first-of-type {
+    padding: 0;
+    align-items: flex-end;
+    justify-content: space-evenly;
 }
 
 /* Шапка */
 header {
-    padding-top: 2vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
     width: 100vw;
     display: flex;
-    position: fixed;
-    z-index: 1;
-    background: linear-gradient(to bottom, rgb(240, 240, 240) 52.5%, transparent);
+    
+    background: linear-gradient(to bottom, rgb(240, 240, 240) 20%, transparent 75%);
 }
 
 .menu {
-    z-index: 1;
-    width: 50%;
-    gap: 2vw;
     display: flex;
-    margin-right: 8vw;
+    gap: 4vw;
+    align-items: center;
+    padding-right: 2vw;
 }
 
-.logo{
-    margin-top: -2vh;
+.logo {
     margin-right: auto;
 }
 
-.logo-img {
-    width: 8vw;
+.logo img {
+    width: 80px;
 }
 
 .menu-button {
+    position: relative;
+    z-index: 5;
     white-space: nowrap;
-    font-size: 1.4vw;
-    cursor: pointer;
 }
 
-.menu-button:hover {
+.menu-button a:hover {
     color: darkgreen;
 }
 
 .contact-number {
     white-space: nowrap;
-    font-size: 1.4vw;
+
 }
 
 .number-border {
-    outline: 1px solid grey;
+    outline: 1px solid orange;
     border-radius: 8%;
     outline-offset: 2px;
 }
@@ -68,8 +83,9 @@ header {
 
     /* Страница 1 */
 
+    /* Задний фон */
 .background {
-    background-image: url(img/background.jpg);
+    background-image: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -77,8 +93,7 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
-    margin: 0;
+    height: 100%;
     z-index: -2;
     opacity: 0.4;
 }
@@ -88,7 +103,7 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     z-index: -1;
     
@@ -106,9 +121,9 @@ header {
 .heading {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    margin-top: 6vh;
-    margin-left: 45vw;
+    align-items: end;
+    cursor: default;
+    padding-right: 12vw;
 
     opacity: 0;
     transition: opacity 1s;
@@ -119,101 +134,105 @@ header {
     transition: opacity 2s 1.5s;
 }
 
-.hotel {
-    position: absolute;
-    cursor: default;
-    font-size: 1.6vw;
-    white-space: nowrap;
-    margin-top: 3vw;
-    margin-left: 2.8vw;
-}
-
-.hotel-label {
+.heading span {
     font-family: Arial Narrow, sans-serif;
-    cursor: default;
     color: darkgreen;
-    font-size: 15vw;
+    font-size: 10vw;
+    position: relative;
 }
 
-.hotel-label::before {
+.heading span:first-letter {
     font-family: New Century Schoolbook, TeX Gyre Schola, serif;
     font-size: 23vw;
-    content: "Л";
 }
 
-.vacation {
-    white-space: nowrap;
-    cursor: default;
-    font-size: 2.5vw;
-    margin-top: -4vw;
-    margin-left: 16.5vw;
+.heading span::before {
+    content: 'ОТЕЛЬ-ЗАПОВЕДНИК';
+    font-size: 1.2vw;
+    color: black;
+    position: absolute;
+    bottom: 21vw;
+    left: 2.6vw;
 }
+
+.heading span::after {
+    content: 'ПРЕМИАЛЬНЫЙ ОТДЫХ В ПОДМОСКОВЬЕ';
+    font-size: 1.65vw;
+    color: black;
+    position: absolute;
+    bottom: 2vw;
+    right: 0;
+}
+
 
     /* Абзац с подробностями */
 .details {
-    z-index: 1;
+    padding-right: calc(50% - 368px);
     display: flex;
-    position: absolute;
-    margin-left: 58.5vw;
-    bottom: 20vh;
-    width: 15vh;
-    height: 24vh;
+    align-items: center;
 }
 
-.details img {
+.details > img {
+    height: 140px;
+
     opacity: 0;
     transition: opacity 1s;
 }
 
 .show .details img {
     opacity: 1;
-    transition: opacity 1.3s 1.9s;
+    transition: opacity 0.5s 2s;
 }
 
-.details > span {
-    display: flex;
-    flex-direction: column;
-    margin-left: -3vh;
-
+.details div {
     opacity: 0;
     transition: opacity 1s;
 }
 
-.show .details > span {
+.show .details div {
     opacity: 1;
-    transition: opacity 1s 2.3s;
+    transition: opacity 1s 2.25s;
 }
 
 .price {
-    cursor: default;
+    position: relative;
     display: flex;
     flex-direction: column;
-}
-
-.price span {
-    font-size: 2vh;
+    width: 65px;
+    font-size: 10pt;
     color: #A66A00;
-    white-space: nowrap;
 }
 
-.price span:first-child {
-    margin-left: 0.3vh;
+.price span:first-child{
+    font-size: 9pt;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.price span:nth-child(2) {
-    font-size: 5vh;
-    margin-top: -1vh;
+.price span:nth-child(2){
+    font-size: 14pt;
+    padding-top: 15%;
+    padding-bottom: 15%;
 }
 
-.price span:nth-child(3) {
-    margin-top: -1vh;
-    margin-left: 9vh;
+.price span:nth-child(2):after {
+    content: ' \20BD';
+}
+
+.price span:last-child {
+    font-size: 9pt;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .facilities {
-    margin-top: 1vh;
-    font-size: 1.73vh;
+    font-size: 10pt;
+    margin-top: 1vw;
+    white-space: nowrap;
 }
+
 
     /* Панель бронирования */
 
@@ -221,11 +240,9 @@ header {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    width: 70vw;
+    position: relative;
+    width: 65vw;
     height: 8vh;
-    bottom: 6vh;
-    left: 30vw;
     background-color: #A66A00;
     outline: 1px solid #A66A00;
     outline-offset: 2px;
@@ -271,7 +288,6 @@ header {
     padding-right: 0.8vh;
     padding-left: 0.8vh;
     height: 4vh;
-    width: fit-content;
     border-radius: 5%;
     background-color: white;
     font-weight: bolder;
@@ -284,7 +300,6 @@ header {
 }
 
 .form-button div {
-    width: fit-content;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -300,7 +315,11 @@ header {
 .form-button div input {
     margin-left: 1vw;
     height: 1.2vh;
-    width: 5vh;
+    width: 10vw;
+}
+
+#guests {
+    width: 30px;
 }
 
 .inner-booking div:nth-child(5){
@@ -323,17 +342,27 @@ header {
     border-radius: 10%;
 }
 
-
+    /* Олень */
 .deer {
     position: absolute;
-    z-index: 0;
-    left: -6vw;
+    z-index: -1;
+    left: 0;
+    top: 0;
     height: 100vh;
-    width: 55vw;
-    -webkit-mask-image: url("./img/deer.png");
-    mask-image: url("./img/deer.png");
+    width: 45vw;
+
+    background-image: url("../img/winter.gif");
+    background-size: cover;
+
+    -webkit-mask-image: url("../img/deer-head.png");
+    mask-image: url("../img/deer-head.png");
+
+    -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    mask-position: 0% 55%;
+
+    -webkit-mask-position: center;
+    mask-position: top;
+
     mask-size: contain;
 
     opacity: 0;
@@ -347,173 +376,166 @@ header {
 
 
     /* Страница 2 */
-
-.rooms {
-    position: absolute;
+    /* Заголовок страницы */
+.rooms-heading {
+    margin-bottom: 8vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-}
-
-.rooms-label {
-    display: flex;
-    flex-direction: column;
-    font-size: 2vw;
-    white-space: nowrap;
-    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 15pt;
 
     opacity: 0;
     transition: opacity 1s;
 }
 
-.show .rooms-label {
+.show .rooms-heading {
     opacity: 1;
+    transition: opacity 0.75s 0.5s;
 }
 
-.rooms-label img {
-    rotate: 270deg;
-    width: 10vw;
-    margin-top: -8vw;
-}
-
-.photos {
+.rooms-heading img{
     position: absolute;
-    display: flex;
-    flex-direction: row;
+    top: -60px;
+    width: 100px;
+    transform: rotate(-90deg);
 }
 
-.photos > div {
+    /* Комнаты */
+.rooms-container {
+    display: flex;
+}
+
+.room {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .room-img {
-    margin-top: 8vw;
-    width: 33.33vw;
+    min-width: 295px;
+    width: 100%;
+    
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.show .room:nth-child(1) .room-img {
+    opacity: 1;
+    transition: opacity 2s 1s;
+}
+
+.show .room:nth-child(2) .room-img {
+    opacity: 1;
+    transition: opacity 2s 1.25s;
+}
+
+.show .room:nth-child(3) .room-img {
+    opacity: 1;
+    transition: opacity 2s 1.5s;
+}
+
+.room > div {
+    width: 295px;
+    height: 211px;
+    position: relative;
+    transform: translateY(-25%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(220, 220, 220);
 
     opacity: 0;
     transition: opacity 1s;
 }
 
-.show .photos :first-child .room-img {
-    opacity: 1;
-    transition: opacity 1s 1s;
-}
-
-.show .photos :nth-child(2) .room-img {
-    opacity: 1;
-    transition: opacity 1s 1.5s;
-}
-
-.show .photos :nth-child(3) .room-img {
+.show .room:nth-child(1)>div {
     opacity: 1;
     transition: opacity 1s 2s;
 }
 
-
-.room-offering {
-    display: flex;
-    flex-direction: column;
-    width: 20vw;
-
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .photos :first-child .room-offering {
+.show .room:nth-child(2)>div {
     opacity: 1;
     transition: opacity 1s 2.25s;
 }
 
-.show .photos :nth-child(2) .room-offering {
+.show .room:nth-child(3)>div {
     opacity: 1;
     transition: opacity 1s 2.5s;
 }
 
-.show .photos :nth-child(3) .room-offering {
-    opacity: 1;
-    transition: opacity 1s 2.75s;
-}
-
-.room-offering > img {
+.room > div > img {
+    width: 50px;
     position: absolute;
-    z-index: 1;
-    margin-top: -13vw;
-    margin-left: -2vw;
-    width: 5vw;
-}
-
-.room-offering > div {
-    display: flex;
-    flex-direction: column;
-    background-color: lightgray;
-    height: fit-content;
-    margin-top: -12vw;
-    width: 20vw;
+    left: 0;
+    top: -40px;
+    transform: rotate(50deg);
 }
 
 .room-facilities {
+    height: 211px;
     display: flex;
-    gap: 2vw;
-    height: 14vw;
 }
 
-.room-facilities div:nth-child(1) {
-    padding-top: 3vw;
-    font-size: 2vw;
-    width: 15vw;
+.room-name {
+    width: 78px;
+    padding: 5% 1%;
 }
 
-.room-facilities div:nth-child(2) {
-    width: 100%;
-    font-size: 1.2vw;
+.room-description {
+    padding: 1%;
+}
+
+.room-offer {
+    width: calc(100% - 2px);
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+    border-left: 2px solid green;
 }
 
 .room-price {
-    margin-top: 2vw;
+    margin-left: 2%;
     display: flex;
-    height: fit-content;
-    cursor: default;
-    width: 100%;
-    border-top: 0.1vw grey solid;
-    border-left: 0.2vw solid darkgreen;
-    gap: 1.5vw;
+    flex-direction: column;
 }
 
-.room-price div:nth-child(1) {
-    white-space: nowrap;
-    font-size: 2vw;
+.room-price span {
+    font-weight: bolder;
 }
 
-.room-price div:nth-child(1) div {
-    font-size: 2vw;
+.room-price span:nth-child(1) {
+    transform: translateY(14px);
 }
 
-.room-price div:nth-child(1) div:nth-child(3) {
-    font-size: 2vw;
-    padding-left: 2.5vw;
+.room-price span:nth-child(2) {
+    font-size: 20pt;
 }
 
-.room-price div:nth-child(1) div:nth-child(2) {
-    font-size: 3vw;
+.room-price span:nth-child(2)::after {
+    content: ' \20bd';
 }
 
-.room-price > div:nth-child(2) {
-    align-content: center;
+.room-price span:nth-child(3) {
+    text-align: end;
+    transform: translateY(-14px);
+}
+
+.room-button {
+    padding: 3%;
+    display: flex;
+    align-items: center;
     text-align: center;
-    cursor: pointer;
-    font-size: 1.5vw;
-    margin-right: 0.2vw;
-    background-color: rgb(255, 217, 0);
-    transition: 0.2s;
+    background-color:rgb(255, 217, 0);
+    transition: background-color 0.5s;
 }
 
-.room-price > div:nth-child(2):hover {
-    background-color: darkgreen;
+.room-button:hover {
+    background-color: green;
 }
 
+
+
+    /* Слайдер */
 .slider {
     display: flex;
     position: absolute;

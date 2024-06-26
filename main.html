@@ -3,30 +3,31 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/pc.css" media="screen and (min-width: 1200px)" type="text/css" rel="stylesheet">
-    <link href="styles/tablet.css" media="screen and (min-width: 960px) and (max-width: 1200px)" type="text/css" rel="stylesheet">
-    <link href="styles/phone.css" media="screen (max-width: 960px)" type="text/css" rel="stylesheet">
+    <link href="styles/pc.css" media="screen and (min-width: 960px) and (max-width: 1200px)" type="text/css" rel="stylesheet">
+    <link href="styles/pc.css" media="screen and (max-width: 960px)" type="text/css" rel="stylesheet">
     <title>Главная страница</title>
 </head>
 <body>
 
 
     <!-- Шапка -->
+
     <header>
         <div class="logo">
             <img src="img/logoplaceholder.png" class="logo-img">
         </div>
         <div class="menu">
             <div class="menu-button">
-                ОБ ОТЕЛЕ
+                <a href="">ОБ ОТЕЛЕ</a>
             </div>
             <div class="menu-button">
-                НОМЕРА И ЦЕНЫ
+                <a href="">НОМЕРА И ЦЕНЫ</a>
             </div>
             <div class="menu-button">
-                МЕРОПРИЯТИЯ
+                <a href="">МЕРОПРИЯТИЯ</a>
             </div>
             <div class="menu-button">
-                КОНТАКТЫ
+                <a href="">КОНТАКТЫ</a>
             </div>
             <div class="contact-number">
                 <span class="number-border">+7 (495) 005-61-59</span>
@@ -34,44 +35,42 @@
         </div>
     </header>
 
-
     <!-- Страницы -->
 
     <div class="page animated">
+
         <div class="background">
             <div class="background-blur"></div>
         </div>
 
-        <img src="img/winter.gif" class="deer"/>
+        <div class="heading">
+            <span>Лесное</span>
+        </div>
 
-        <span class="heading">
-            <span class="hotel">отель-заповедник</span>
-            <span class="hotel-label">есное</span>
-            <span class="vacation">премиальный отдых в москве</span>
-        </span>
+        <div class="deer"></div>
 
-        <span class="details">
+        <div class="details">
             <img src="img/pattern.png">
-            <span>
-                <span class="price">
+            <div>
+                <div class="price">
                     <span>от</span>
-                    <span>5 500 Р</span>
+                    <span>5500</span>
                     <span>в сутки</span>
-                </span>
-                <span class="facilities">
-                    4х разовое питание и all inclusive.
-                    собственное подсобное хозяйство,
-                    бассейн, баня, конный двор 
-                    и контактный зоопарк
-                </span>
-            </span>
-        </span>
+                </div>
+                <div class="facilities">
+                    4-х разовое питание и all inclusive.<br>
+                    Cобственное подсобное хозяйство, бассейн,<br> 
+                    баня, конный двор<br> и контактный зоопарк
+                </div>
+            </div>
+        </div>
 
         <div class="booking">
             <img src="img/pattern2.png">
-            <img src="img/pattern2.png">
             <div class="inner-booking">
+                
                 <span>БРОНИРОВАНИЕ НОМЕРОВ</span>
+
                 <div class="form-button">
                     <img src="img/calendar.png">
                     <div>
@@ -79,6 +78,7 @@
                         <input type="date"></input>
                     </div>
                 </div>
+
                 <div class="form-button">
                     <img src="img/calendar.png">
                     <div>
@@ -86,107 +86,146 @@
                         <input type="date"></input>
                     </div>
                 </div>
+
                 <div class="form-button">
                     <img src="img/avatar.png">
                     <div>
                         <span>Гости</span>
-                        <input type="number" min="1" max="4"></input>
+                        <input type="number" id="guests" min="1" max="20" step="1" value="1"></input>
                     </div>
                 </div>
+
                 <div class="form-button">
                     <span>Найти номер</span>
                 </div>
-                <div></div>
+
             </div>
+            <img src="img/pattern2.png">
         </div>
+
     </div>
 
-
+    <!-- Страница 2 -->
     <div class="page animated">
-        <div class="rooms">
-            <div class="rooms-label">
-                <div>НОМЕРНОЙ ФОНД</div>
-                <img src="img/pattern.png">
+
+        <div class="rooms-heading">
+            <span>НОМЕРНОЙ ФОНД</span>
+            <img src="img/pattern.png">
+        </div>
+
+        <!-- Номерной фонд -->
+        <div class="rooms-container">
+            <!-- Комната 1 -->
+            <div class="room">
+
+                <img src="img/rooms/room1.jpg" class="room-img">
+    
+                <div>
+                    <img src="img/pattern3.png">
+                    <div class="room-facilities">
+                        <div class="room-name">
+                            СТАНДАРТ
+                        </div>
+    
+                        <div class="room-description">
+                            Небольшой уютный номер 22<br>
+                            квадратных метра, есть<br>
+                            варианты с одной двухспальной<br>
+                            кроватью или с двумя<br>
+                            односпальными кроватями.
+                        </div>
+                    </div>
+    
+                    <div class="room-offer">
+                        <div class="room-price">
+                            <span>от</span>
+                            <span>5 500</span>
+                            <span>в сутки</span>
+                        </div>
+                        <div class="room-button">
+                            <a href="">Посмотреть <br> номер</a>
+                        </div>
+                    </div>
+                </div>
+    
             </div>
-            <div class="photos">
+            
+            <!-- Комната 2 -->
+            <div class="room">
+
+                <img src="img/rooms/room2.jpg" class="room-img">
+    
                 <div>
-                    <img src="img/rooms/room1.jpg" class="room-img">
-                    <div class="room-offering">
-                        <img src="img/pattern3.png">
-                        <div>
-                            <div class="room-facilities">
-                                <div>Стандарт</div>
-                                <div>Небольшой уютный номер 22
-                                    квадратных метра, есть
-                                    варианты с одной двухспальной
-                                    кроватью или с двумя
-                                    односпальными кроватями.
-                                </div>
-                            </div>
-                            <div class="room-price">
-                                <div>
-                                    <div>от</div>
-                                    <div>5 500 р</div>
-                                    <div>в сутки</div>
-                                </div>
-                                <div>Посмотреть номер</div>
-                            </div>
+                    <img src="img/pattern3.png">
+                    <div class="room-facilities">
+                        <div class="room-name">
+                            СТАНДАРТ <br> ПЛЮС
+                        </div>
+    
+                        <div class="room-description">
+                            Просторный уютный номер 28<br>
+                            квадратных метра, есть<br>
+                            варианты с одной двухспальной<br>
+                            кроватью или с двумя<br>
+                            односпальными кроватями.
+                        </div>
+                    </div>
+    
+                    <div class="room-offer">
+                        <div class="room-price">
+                            <span>от</span>
+                            <span>6 000</span>
+                            <span>в сутки</span>
+                        </div>
+                        <div class="room-button">
+                            <a href="">Посмотреть <br> номер</a>
                         </div>
                     </div>
                 </div>
+            
+            </div>
+
+            <!-- Комната 3 -->
+            <div class="room">
+
+                <img src="img/rooms/room3.jpg" class="room-img">
+    
                 <div>
-                    <img src="img/rooms/room3.jpg" class="room-img">
-                    <div class="room-offering">
-                        <img src="img/pattern3.png">
-                        <div>
-                            <div class="room-facilities">
-                                <div>Стандарт
-                                    Плюс
-                                </div>
-                                <div>Просторный уютный номер 28
-                                    квадратных метра, есть варианты
-                                    с одной двухспальной кроватью или
-                                    с двумя односпальными кроватями
-                                </div>
-                            </div>
-                            <div class="room-price">
-                                <div>
-                                    <div>от</div>
-                                    <div>6 000 р</div>
-                                    <div>в сутки</div>
-                                </div>
-                                <div>Посмотреть номер</div>
-                            </div>
+    
+                    <img src="img/pattern3.png">
+                    <div class="room-facilities">
+    
+                        <div class="room-name">
+                            ЛЮКС
+                        </div>
+    
+                        <div class="room-description">
+                            Просторные аппартаменты<br>
+                            повышенной комфортности<br>
+                            площадью 50м<sup>2</sup>, есть варианты<br>
+                            с душевой кабиной либо<br>
+                            с ванной
+                        </div>
+    
+                    </div>
+    
+                    <div class="room-offer">
+                        <div class="room-price">
+                            <span>от</span>
+                            <span>7 500</span>
+                            <span>в сутки</span>
+                        </div>
+                        <div class="room-button">
+                            <a href="">Посмотреть <br> номер</a>
                         </div>
                     </div>
+    
                 </div>
-                <div>
-                    <img src="img/rooms/room2.jpg" class="room-img">
-                    <div class="room-offering">
-                        <img src="img/pattern3.png">
-                        <div>
-                            <div class="room-facilities">
-                                <div>Люкс</div>
-                                <div>Просторный уютный номер 28
-                                    квадратных метра, есть варианты
-                                    с одной двухспальной кроватью или
-                                    с двумя односпальными кроватями
-                                </div>
-                            </div>
-                            <div class="room-price">
-                                <div>
-                                    <div>от</div>
-                                    <div>7 500 р</div>
-                                    <div>в сутки</div>
-                                </div>
-                                <div>Посмотреть номер</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    
             </div>
         </div>
         
+        <!-- Слайдер -->
         <div>
             <div class="slider">
                 <div class="arrowLeft"></div>
@@ -278,7 +317,8 @@
                     </span>
                 </div>
             </div>
-        </div>
+
+        <!-- Обзор территории -->
         <div class="reserve">
             <img src="img/rooms/reserve.jpg" class="reserve-img">
             <div class="reserve-description">
@@ -311,8 +351,8 @@
             </div>
             <img src="img/reserve-deer.png" class="reserve-deer">
         </div>
+        </div>
     </div>
-
 
     <script src="scripts/script.js"></script>
 
