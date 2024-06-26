@@ -59,8 +59,6 @@ header {
 }
 
 .menu-button {
-    position: relative;
-    z-index: 5;
     white-space: nowrap;
 }
 
@@ -70,7 +68,6 @@ header {
 
 .contact-number {
     white-space: nowrap;
-
 }
 
 .number-border {
