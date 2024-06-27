@@ -79,6 +79,7 @@ images = document.getElementsByClassName('video-slider-video-below');
 images[0].style.cssText = `
                 outline: 0.3vw darkgreen solid;
                 outline-offset: 0.4vw;
+                transition: 0.2s ease-in-out;
             `
 
 function videoSliderLeft() {
@@ -113,17 +114,107 @@ function changeImages() {
     for (let i=0; i<3; i++) {
         if (i == currentVideo) {
             images[i].style.cssText = `
+                transition: 0.2s ease-in-out;
                 outline: 0.3vw darkgreen solid;
                 outline-offset: 0.4vw;
-            `
+            `;
         }
         else {
             images[i].style.cssText = `
+                transition: 0.2s ease-in-out;
                 outline: 0vw;
-            `
+            `;
         }
     }
 }
 
 videoLeftArrow.addEventListener('click', videoSliderLeft);
 videoRightArrow.addEventListener('click', videoSliderRight);
+
+
+// События
+
+const events = document.querySelector('.events'); 
+
+function action(select) {
+    let allEvents = document.getElementsByClassName('event');
+    let img = select.firstElementChild;
+    let desc = select.lastElementChild;
+
+    for (let event of allEvents) {
+        if (event != select) {
+            event.style.cssText = `
+                transition: 0.2s ease-in-out;
+                opacity: 0.5;
+            `
+        }
+
+        if (event.firstElementChild.style.width == "18vw") {
+            turnBackStyles(event);
+            event.style.cssText = `
+                transition: 0.2s ease-in-out;
+                opacity: 0.5;
+            `
+            if (event == select) {
+                turnBackAllstyles(allEvents);
+                return;
+            }
+        }
+    }
+
+    select.style.cssText = `
+        transition: 0.2s ease-in-out;
+        transform: translateY(-1vw);
+    `;
+
+    img.style.cssText = `
+        transition: 0.2s ease-in-out;
+        width: 18vw;
+    `;
+
+    desc.style.cssText = `
+        transition: 0.2s ease-in-out;   
+        width: 18vw;
+        height: 14vw;
+    `;
+
+    desc.lastElementChild.style.cssText = `
+        transition: 0.2s ease-in-out;
+        transform: translate(-8vw, 6vw);
+    `;
+}
+
+function turnBackStyles(event) {
+    event.style.cssText = `
+                transition: 0.2s ease-in-out;
+                transform: translateY(0vw);
+            `
+
+            event.firstElementChild.style.cssText = `
+                transition: 0.2s ease-in-out;
+                width: 16vw;
+            `;
+    
+            event.lastElementChild.style.cssText = `
+                transition: 0.2s ease-in-out;
+                width: 16vw;
+                height: 12vw;
+            `;
+
+            event.lastElementChild.lastElementChild.style.cssText = `
+                transition: 0.2s ease-in-out;
+                transform: translate(-6vw, 5vw);
+             `;
+}
+
+function turnBackAllstyles(events) {
+    for (let event of events) {
+        turnBackStyles(event);
+    }
+}
+
+events.addEventListener('click', function(event) {
+    if (event.target.closest('.event')){
+        action(event.target.closest('.event'));
+    }
+});

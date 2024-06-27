@@ -838,6 +838,7 @@ header {
 
 .video-slider-itself video{
     width: 70vw;
+    transition: 0.2s ease-in-out;
 }
 
 .video-slider-itself video:nth-child(2) {
@@ -940,7 +941,7 @@ header {
 }
 
 .events {
-    transform: translateY(-20vw);
+    transform: translateY(-23vw);
     display: flex;
     gap: 2vw;
 }
@@ -948,21 +949,165 @@ header {
 .event {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .event-img {
-    width: 15vw;
+    width: 16vw;
 }
 
-.event div {
+.event-description {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 10vw;
+    gap: 0;
+    width: 16vw;
+    height: 12vw;
     background-color: rgba(220, 220, 220, 0.538);
+}
+
+.event-description div {
+    margin-left: 1.5vw;
+    margin-right: 1vw;
+}
+
+.event-description div:nth-child(1) {
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.event-description div:nth-child(2) {
+    margin-top: -1vw;
+    font-weight: bold;
+    font-size: 1.8vw;
+}
+
+.event-description div:nth-child(3) {
+    margin-top: 0.5vw;
+    font-size: 1vw;
+}
+
+.event-description img {
+    position: absolute;
+    rotate: 270deg;
+    width: 6vw;
+    transform: translate(-6vw, 5vw);
+}
+
+
+/* Страница 6 */
+
+.way {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-60vw);
+    width: 100vw;
+}
+
+.way-heading {
+    display: flex;
+    flex-direction: column;
+}
+
+.way-heading div {
     font-size: 2vw;
 }
 
+.way-heading img {
+    transform:translate(13vw, 6vw);
+    width: 15vw;
+    rotate: 270deg;
+}
 
+.footer {
+    display: flex;
+    transform: translateY(-20vw);
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+}
 
+.left.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-vehicles {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+.footer-vehicles > div {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.footer-vehicles > div img {
+    width: 12vw;
+}
+
+.way-description {
+    width: 30vw;
+    font-size: 1.2vw;
+}
+
+.contacts {
+    width: 44vw;
+    height: 17vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vw;
+    border: 0.2vw rgb(255, 217, 0) solid;
+    outline: 0.2vw rgb(116, 107, 14 ) solid;
+    outline-offset: 0.5vw;
+    border-radius: 5%;
+}
+
+.left-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    font-size: 1.2vw;
+}
+
+.left-contacts-heading {
+    transform: translateY(-0.5vw);
+    font-size: 2vw;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    width: 15vw;
+}
+
+.info img {
+    width: 1.5vw;
+}
+
+.right-contacts {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(3vw);
+    font-size: 2vw;
+}
+
+.networks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.networks img {
+    width: 2vw;
+}
+
+iframe {
+    width: 43vw;
+    height: 53vw;
+}
