@@ -66,3 +66,64 @@ function giveClasses() {
 
 leftArrow.addEventListener('click', sliderLeft);
 rightArrow.addEventListener('click', sliderRight);
+
+
+// Видео слайдер
+
+let videoLeftArrow = document.querySelector('.video-slider-left-arrow');
+let videoRightArrow = document.querySelector('.video-slider-right-arrow');
+
+let currentVideo = 0;
+
+images = document.getElementsByClassName('video-slider-video-below');
+images[0].style.cssText = `
+                outline: 0.3vw darkgreen solid;
+                outline-offset: 0.4vw;
+            `
+
+function videoSliderLeft() {
+    currentVideo -= 1;
+    if (currentVideo < 0) {
+        currentVideo = 2;
+    }
+
+    videos = document.getElementsByClassName('video');
+
+    videos[0].before(videos[2]);
+
+    changeImages();
+}
+
+function videoSliderRight() {
+    currentVideo += 1;
+    if (currentVideo > 2) {
+        currentVideo = 0;
+    }
+
+    videos = document.getElementsByClassName('video');
+
+    videos[2].after(videos[0]);
+
+    changeImages();
+}
+
+function changeImages() {
+    images = document.getElementsByClassName('video-slider-video-below');
+    
+    for (let i=0; i<3; i++) {
+        if (i == currentVideo) {
+            images[i].style.cssText = `
+                outline: 0.3vw darkgreen solid;
+                outline-offset: 0.4vw;
+            `
+        }
+        else {
+            images[i].style.cssText = `
+                outline: 0vw;
+            `
+        }
+    }
+}
+
+videoLeftArrow.addEventListener('click', videoSliderLeft);
+videoRightArrow.addEventListener('click', videoSliderRight);
