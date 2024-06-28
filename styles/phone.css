@@ -495,7 +495,7 @@ header {
     margin-top: 0.5vw;
     content: "\27A4";
     rotate: 180deg;
-    font-size: 2.5vw;
+    font-size: 5vw;
 }
 
 .slider::after {
@@ -503,7 +503,7 @@ header {
     z-index: 1;
     margin-left: 85vw;
     content: "\27A4";
-    font-size: 2.5vw;
+    font-size: 5vw;
 }
 
 .slider > div {
