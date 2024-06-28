@@ -283,9 +283,9 @@ header {
 
 .booking > img {
     position: absolute;
+    align-self: center;
     width: 10vh;
     bottom: 8.1vh;
-    left: 50%;
 }
 
 .booking img:nth-child(2) {
@@ -487,15 +487,16 @@ header {
 .slider {
     display: flex;
     align-items: center;
+    align-self: center;
     justify-content: center;
-    width: 80vw;
+    width: 90vw;
+    margin: 50vw 0;
 }
 
 .slider::before {
     position: absolute;
-    cursor: pointer;
     z-index: 1;
-    margin-right: 77vw;
+    margin-right: 85vw;
     margin-top: 0.5vw;
     content: "\27A4";
     rotate: 180deg;
@@ -504,9 +505,8 @@ header {
 
 .slider::after {
     position: absolute;
-    cursor: pointer;
     z-index: 1;
-    margin-left: 77vw;
+    margin-left: 85vw;
     content: "\27A4";
     font-size: 2.5vw;
 }
@@ -518,7 +518,6 @@ header {
 .slide-is-active {
     position: relative;
     width: 90vw;
-    margin-right: -5vw;
 }
 
 .slide-isnot-active {
@@ -529,18 +528,13 @@ header {
 }
 
 .slide-is-active img {
-    width: 30vw;
+    width: 40vw;
     border-top-left-radius: 5%;
     border-bottom-left-radius: 5%;
 }
 
 .slide-isnot-active img {
     display: none;
-    width: 15vw;
-    outline: 0.3vw rgb(224, 208, 29) solid;
-    outline-offset: 0.3vw;
-    border-radius: 5%;
-    opacity: 0.5;
 }
 
 .slide-isnot-active div {
@@ -561,45 +555,27 @@ header {
     border-bottom-right-radius: 5%;
 }
 
-.slide-is-active span {
+.slide-is-active span, .slider-left-label, .slider-right-label {
     display: none;
-}
-
-.slide-isnot-active span {
-    position: absolute;
-    align-self: center;
-    font-size: 1.1vw;
-    width: 5vw;
-    font-weight: bolder;
-}
-
-.slider-left-label {
-    display: none;
-    margin-left: 3vw;
-}
-
-.slider-right-label {
-    display: none;
-    margin-left: 6vw;
 }
 
 .slider-name {
-    font-size: 1.8vw;
+    font-size: 2vw;
     margin-top: 2vw;
-    margin-left: 3vw;
+    margin-left: 3.5vw;
 }
 
 .slider-room-description {
     margin-top: 2vw;
     margin-left: 3vw;
     margin-right: 0.5vw;
-    font-size: 1.3vw;
+    font-size: 3vw;
 }
 
 .slider-facilities {
     margin-top: 1vw;
     margin-right: 0.5vw;
-    font-size: 1.3vw;
+    font-size: 3vw;
 }
 
 .slider-description-footer {
@@ -611,31 +587,28 @@ header {
 
 .slider-price {
     display: flex;
-    margin-bottom: 4vw;
+    margin-bottom: 6vw;
     gap: 1.2vw;
-    font-size: 1.8vw;
+    font-size: 3vw;
 }
 
 .slider-price div:nth-child(2) {
-    font-size: 2.5vw;
+    font-size: 4vw;
 }
 
 .check-room {
     z-index: 1;
     position: absolute;
     align-self: center;
-    cursor: pointer;
     margin-top: 5.9vw;
-    font-size: 2vw;
+    font-size: 3vw;
     background-color: rgb(255, 217, 0);
     outline: 0.2vw rgb(116, 107, 14) solid;
     outline-offset: 0.2vw;
     border-radius: 10%;
-    transition: 0.3s ease-in-out;
 }
 
 .arrowLeft {
-    cursor: pointer;
     position: absolute;
     z-index: 2;
     margin-right: 77vw;
@@ -644,7 +617,6 @@ header {
 }
 
 .arrowRight {
-    cursor: pointer;
     position: absolute;
     z-index: 2;
     margin-left: 77vw;
@@ -659,6 +631,7 @@ header {
     display: flex;
     justify-content: center;
     padding-top: 20vw;
+    margin-bottom: 20vw;
     width: 100vw;
     height: fit-content;
 }
@@ -752,23 +725,23 @@ header {
 }
 
 .video-slider-heading div {
-    font-size: 2vw;
+    font-size: 4vw;
 }
 
 .video-slider-heading img {
-    transform:translate(13vw, 1vw);
-    width: 15vw;
+    transform:translate(17vw, 7vw);
+    width: 20vw;
     rotate: 270deg;
 }
 
 .video-slider-itself {
-    transform:translateY(-22vw);
+    transform:translateY(-25vw);
     display: flex;
     background-color: black;
 }
 
 .video-slider-itself video{
-    width: 70vw;
+    width: 90vw;
     transition: 0.2s ease-in-out;
 }
 
@@ -805,37 +778,35 @@ header {
     position: absolute;
     rotate: 180deg;
     content: "\27A4";
-    font-size: 4vw;
+    font-size: 5vw;
     margin-right: 53vw;
-    margin-bottom: 13.5vw;
+    margin-bottom: -10vw;
 }
 
 .video-slider::after {
     position: absolute;
     content: "\27A4";
-    font-size: 4vw;
+    font-size: 5vw;
     margin-left: 53vw;
-    margin-bottom: 13.5vw;
+    margin-bottom: -10vw;
 }
 
 .video-slider-left-arrow {
     position: absolute;
-    cursor: pointer;
     z-index: 1;
     width: 6vw;
     height: 4vw;
     margin-right: 53vw;
-    margin-bottom: 13vw;
+    margin-bottom: -10vw;
 }
 
 .video-slider-right-arrow {
     position: absolute;
-    cursor: pointer;
     z-index: 1;
     width: 6vw;
     height: 4vw;
     margin-left: 53vw;
-    margin-bottom: 13vw;
+    margin-bottom: -10vw;
 }
 
 .video-slider-pattern {
@@ -843,7 +814,6 @@ header {
     width: 25vw;
     transform: translate(37vw);
 }
-
 
 /* Страница 5 */
 
@@ -854,12 +824,6 @@ header {
     align-items: center;
     width: 100vw;
     margin-bottom: 25vw;
-
-    opacity: 0;
-}
-
-.calendar.animated.show {
-    opacity: 1;
 }
 
 .calendar-heading {
@@ -868,12 +832,12 @@ header {
 }
 
 .calendar-heading div {
-    font-size: 2vw;
+    font-size: 4vw;
 }
 
 .calendar-heading img {
-    transform:translate(13vw, 4vw);
-    width: 15vw;
+    transform:translate(25vw, 8vw);
+    width: 30vw;
     rotate: 270deg;
 }
 
@@ -903,6 +867,7 @@ header {
     height: 20vw;
     min-width: 24vw;
     min-height: 20vw;
+    padding-bottom: 2vw;
     background-color: rgba(220, 220, 220, 0.538);
 }
 
@@ -924,7 +889,7 @@ header {
 
 .event-description div:nth-child(3) {
     margin-top: 0.5vw;
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 .event-description img {
@@ -940,6 +905,7 @@ header {
 /* Страница 6 */
 
 .way {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -951,36 +917,41 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: 10vw;
+    margin-bottom: 20vw;
 }
 
 .way-heading div {
-    font-size: 2vw;
+    font-size: 4vw;
 }
 
 .way-heading img {
     position: absolute;
-    transform: translate(10vw, 6vw);
-    width: 15vw;
+    transform: translate(20vw, 12vw);
+    width: 30vw;
     rotate: -90deg;
 }
 
 .footer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4vw;
+    justify-content: space-between;
+    width: 100vw;
 }
 
-.left.footer {
+.left-footer {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.right-footer {
+    position: absolute;
 }
 
 .footer-vehicles {
     display: flex;
     flex-direction: column;
     gap: 5vw;
+    margin-left: 10vw;
 }
 
 .footer-vehicles > div {
@@ -994,17 +965,16 @@ header {
 }
 
 .way-description {
-    width: 30vw;
-    font-size: 1.2vw;
+    width: 60vw;
+    font-size: 2.4vw;
 }
 
 .contacts {
-    width: 44vw;
-    height: 17vw;
+    padding: 5vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     margin-top: 5vw;
+    align-self: flex-start;
     border: 0.2vw rgb(255, 217, 0) solid;
     outline: 0.2vw rgb(116, 107, 14 ) solid;
     outline-offset: 0.5vw;
@@ -1015,29 +985,28 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    font-size: 1.2vw;
+    font-size: 3.4vw;
 }
 
 .left-contacts-heading {
     transform: translateY(-0.5vw);
-    font-size: 2vw;
+    font-size: 4vw;
 }
 
 .info {
     display: flex;
     align-items: center;
-    width: 15vw;
+    width: 35vw;
 }
 
 .info img {
-    width: 1.5vw;
+    width: 3vw;
 }
 
 .right-contacts {
     display: flex;
     flex-direction: column;
-    transform: translateX(3vw);
-    font-size: 2vw;
+    font-size: 4vw;
 }
 
 .networks {
@@ -1048,10 +1017,45 @@ header {
 }
 
 .networks img {
-    width: 2vw;
+    width: 4vw;
+}
+
+#map-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.map {
+    display: block;
+    position: relative;
+    border: 2px solid orange;
+    background: transparent;
+    width: 80px;
+    text-align: center;
+    padding: 1vw;
+    margin-top: 85vw;
+    margin-left: calc(95vw - 80px);
+}
+
+.map span::before {
+    content: 'Показать ';
+}
+
+#map-checkbox:checked ~ .map span::before {
+    content: 'Скрыть ';
+}
+
+#map-checkbox:checked ~ iframe {
+    transform: translateX(0);
 }
 
 iframe {
-    width: 43vw;
-    height: 53vw;
+    position: absolute;
+    top: -5vw;
+    left: 0;
+    margin: 5vw;
+    width: 90vw;
+    height: 70vw;
+    transform: translateX(-100vw);
+    transition: 1s;
 }
