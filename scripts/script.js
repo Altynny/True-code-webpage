@@ -29,17 +29,61 @@ const rightArrow = document.querySelector('.arrowRight');
 function sliderRight() {
     let slides = document.getElementsByClassName('slide');
 
-    slides[2].after(slides[0]);
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-    giveClasses();
+    slides[0].style.opacity = "0";
+    slides[0].style.transition = "opacity 0.2s ease-in-out";
+    slides[1].style.opacity = "0"
+    slides[1].style.transition = "opacity 0.2s ease-in-out 0.1";
+    slides[2].style.opacity = "0";
+    slides[2].style.transition = "opacity 0.2s ease-in-out";
+
+    (async () => {
+        await sleep(200);
+        slides[0].style.opacity = "1";
+        slides[1].style.transition = "opacity 0.1s ease-in-out";
+        slides[1].style.opacity = "1";
+        slides[2].style.opacity = "1";
+        
+        slides[0].style.zIndex = '-1';
+        slides[2].style.zIndex = '-1';
+
+        slides[2].after(slides[0]);
+
+        giveClasses();
+
+        slides[1].style.zIndex = '0';
+    })();
 }
 
 function sliderLeft() {
     let slides = document.getElementsByClassName('slide');
 
-    slides[0].before(slides[2]);
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-    giveClasses();
+    slides[0].style.opacity = "0";
+    slides[0].style.transition = "opacity 0.2s ease-in-out";
+    slides[1].style.opacity = "0"
+    slides[1].style.transition = "opacity 0.2s ease-in-out 0.1s";
+    slides[2].style.opacity = "0";
+    slides[2].style.transition = "opacity 0.2s ease-in-out";
+
+    (async () => {
+        await sleep(300);
+        slides[0].style.opacity = "1";
+        slides[1].style.transition = "opacity 0.1s ease-in-out";
+        slides[1].style.opacity = "1";
+        slides[2].style.opacity = "1";
+        
+        slides[0].style.zIndex = '-1';
+        slides[2].style.zIndex = '-1';
+
+        slides[2].before(slides[0]);
+
+        giveClasses();
+
+        slides[1].style.zIndex = '0';
+    })();
 }
 
 function giveClasses() {

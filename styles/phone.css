@@ -517,15 +517,13 @@ header {
 
 .slide-is-active {
     position: relative;
-    width: 60vw;
+    width: 90vw;
     margin-right: -5vw;
-    margin-left: -5vw;
 }
 
 .slide-isnot-active {
-    width: 30vw;
+    width: 0vw;
     background-color: rgb(255, 248, 220);
-    outline: 0.2vw rgb(116, 107, 14) solid;
     outline-offset: 0.8vw;
     border-radius: 5%;
 }
@@ -537,6 +535,7 @@ header {
 }
 
 .slide-isnot-active img {
+    display: none;
     width: 15vw;
     outline: 0.3vw rgb(224, 208, 29) solid;
     outline-offset: 0.3vw;
@@ -575,10 +574,12 @@ header {
 }
 
 .slider-left-label {
+    display: none;
     margin-left: 3vw;
 }
 
 .slider-right-label {
+    display: none;
     margin-left: 6vw;
 }
 
