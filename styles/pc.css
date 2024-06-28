@@ -1178,3 +1178,7 @@ iframe {
     opacity: 1;
     transition: 1s 0.75s;
 }
+
+#map-checkbox, .map {
+    display: none;
+}
