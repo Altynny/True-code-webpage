@@ -42,7 +42,7 @@ header {
     width: 100vw;
     display: flex;
     
-    background: linear-gradient(to bottom, rgb(240, 240, 240) 20%, transparent 75%);
+    background: linear-gradient(to bottom, rgb(240, 240, 240) 50%, transparent 100%);
 }
 
 .menu {
@@ -547,6 +547,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 80vw;
+    margin-bottom: 5vw;
 
     opacity: 0;
     transition: opacity 1s;
@@ -736,6 +737,13 @@ header {
     width: 40vw;
     margin-top: 1.5vw;
     height:min-content;
+
+    transform: translateX(-100vw);
+    transition: transform 1s;
+}
+
+.show .reserve-img {
+    transform: translateX(0);
 }
 
 .reserve-description {
@@ -744,6 +752,13 @@ header {
     height: fit-content;
     transform: translateX(-15vw);
     width: 40vw;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.show .reserve-description {
+    opacity: 1;
 }
 
 .reserve-description img {
@@ -799,7 +814,7 @@ header {
     outline: 0.2vw rgb(116, 107, 14) solid;
     outline-offset: 0.15vw;
     border-radius: 5%;
-    transition: 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .check-reserve:hover {
@@ -811,6 +826,13 @@ header {
     z-index: 1;
     width: 35vw;
     height: min-content;
+    opacity: 0;
+    transform: translateX(71);
+    transition: transform 1.5s 0.25s, opacity 0.25s;
+}
+
+.show .reserve-deer {
+    opacity: 1;
     transform: translateX(-21vw);
 }
 
@@ -1025,6 +1047,13 @@ header {
     flex-direction: column;
     position: relative;
     margin-bottom: 10vw;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.show .way-heading {
+    opacity: 1;
 }
 
 .way-heading div {
@@ -1054,6 +1083,14 @@ header {
     display: flex;
     flex-direction: column;
     gap: 5vw;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.show .footer-vehicles {
+    opacity: 1;
+    transition: opacity 1s 0.5s;
 }
 
 .footer-vehicles > div {
@@ -1082,6 +1119,14 @@ header {
     outline: 0.2vw rgb(116, 107, 14 ) solid;
     outline-offset: 0.5vw;
     border-radius: 5%;
+
+    opacity: 0;
+    transition: 1s;
+}
+
+.show .contacts {
+    opacity: 1;
+    transition: 1s 1s;
 }
 
 .left-contacts {
@@ -1127,4 +1172,12 @@ header {
 iframe {
     width: 43vw;
     height: 53vw;
+
+    opacity: 0;
+    transition: 1s;
+}
+
+.show iframe {
+    opacity: 1;
+    transition: 1s 0.75s;
 }
