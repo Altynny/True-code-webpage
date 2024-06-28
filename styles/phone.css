@@ -362,11 +362,6 @@ header {
     margin-left: 0;
 }
 
-.inner-booking div:nth-child(5):hover{
-    background-color: green;
-    border-radius: 10%;
-}
-
     /* Олень */
 .deer {
     display: none;
@@ -612,16 +607,16 @@ header {
     position: absolute;
     z-index: 2;
     margin-right: 77vw;
-    width: 3vw;
-    height: 3vw;
+    width: 10vw;
+    height: 10vw;
 }
 
 .arrowRight {
     position: absolute;
     z-index: 2;
     margin-left: 77vw;
-    width: 3vw;
-    height: 3vw;
+    width: 10vw;
+    height: 10vw;
 }
 
 
