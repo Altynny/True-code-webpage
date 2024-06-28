@@ -81,6 +81,10 @@ header {
     outline-offset: 2px;
 }
 
+#burger-checkbox, .burger {
+    display: none;
+}
+
 /* Страницы */
 
     /* Страница 1 */

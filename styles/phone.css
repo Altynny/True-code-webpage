@@ -29,7 +29,7 @@ a {
 
 .page:first-of-type {
     padding: 0;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -45,11 +45,75 @@ header {
     background: linear-gradient(to bottom, rgb(240, 240, 240) 20%, transparent 75%);
 }
 
+.burger {
+    display: block;
+    position: relative;
+    z-index: 5;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+#burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.burger::before,
+.burger::after {
+  content: '';
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background: gray;
+}
+
+.burger::before {
+  top: 0;
+  box-shadow: 0 11px 0 gray;
+  transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+
+.burger::after {
+  bottom: 0;
+  transition: bottom .3s .15s, transform .3s;
+}
+
+#burger-checkbox:checked ~ .burger::before {
+  top: 11px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 0 rgba(0,0,0,0);
+  transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+#burger-checkbox:checked ~ .burger::after {
+  bottom: 11px;
+  transform: rotate(-45deg);
+  transition: bottom .3s, transform .3s .15s;
+}
+
 .menu {
+    position: fixed;
+    right: 0;
+    transform: translateX(100%);
     display: flex;
+    flex-direction: column;
     gap: 4vw;
     align-items: center;
-    padding-right: 2vw;
+    padding: 55px 30px;
+    padding-bottom: 15px;
+    background-color: rgb(240, 240, 240);
+    transition: .3s;
+}
+
+#burger-checkbox:checked ~ .menu {
+    transform: translateX(0);
 }
 
 .logo {
@@ -66,7 +130,7 @@ header {
     white-space: nowrap;
 }
 
-.menu-button a:hover {
+.menu-button a {
     color: darkgreen;
 }
 
@@ -108,12 +172,6 @@ header {
     height: 100%;
     margin: 0;
     z-index: -1;
-    
-    background: white;
-    transition: background 1s;
-}
-
-.show .background-blur {
     background: radial-gradient(circle, 
     rgba(255, 255, 255, 0.5), 
     rgb(255, 255, 255));
@@ -125,41 +183,32 @@ header {
     flex-direction: column;
     align-items: end;
     cursor: default;
-    padding-right: 12vw;
-
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .heading {
-    opacity: 1;
-    transition: opacity 2s 1.5s;
 }
 
 .heading span {
     font-family: Arial Narrow, sans-serif;
     color: darkgreen;
-    font-size: 10vw;
+    font-size: 20vw;
     position: relative;
 }
 
 .heading span:first-letter {
     font-family: New Century Schoolbook, TeX Gyre Schola, serif;
-    font-size: 23vw;
+    font-size: 30vw;
 }
 
 .heading span::before {
     content: 'ОТЕЛЬ-ЗАПОВЕДНИК';
-    font-size: 1.2vw;
+    font-size: 1.7vw;
     color: black;
     position: absolute;
-    bottom: 21vw;
+    bottom: 27.5vw;
     left: 2.6vw;
 }
 
 .heading span::after {
     content: 'ПРЕМИАЛЬНЫЙ ОТДЫХ В ПОДМОСКОВЬЕ';
-    font-size: 1.65vw;
+    font-size: 3.08vw;
     color: black;
     position: absolute;
     bottom: 2vw;
@@ -169,31 +218,12 @@ header {
 
     /* Абзац с подробностями */
 .details {
-    padding-right: calc(50% - 368px);
     display: flex;
     align-items: center;
 }
 
 .details > img {
     height: 140px;
-
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .details img {
-    opacity: 1;
-    transition: opacity 0.5s 2s;
-}
-
-.details div {
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .details div {
-    opacity: 1;
-    transition: opacity 1s 2.25s;
 }
 
 .price {
@@ -243,31 +273,23 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 65vw;
+    width: 100vw;
     height: 8vh;
     background-color: #A66A00;
     outline: 1px solid #A66A00;
     outline-offset: 2px;
-
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .booking {
-    opacity: 1;
-    transition: opacity 2s 1s;
 }
 
 .booking > img {
     position: absolute;
     width: 10vh;
     bottom: 8.1vh;
-    left: 30vw;
+    left: 50%;
 }
 
 .booking img:nth-child(2) {
-    rotate: 180deg;
-    bottom: -2.9vh;
+    cursor: default;
+    margin-left: 2vh;
 }
 
 .inner-booking {
@@ -317,7 +339,7 @@ header {
 .form-button div input {
     margin-left: 1vw;
     height: 1.2vh;
-    width: 10vw;
+    width: 25px;
 }
 
 #guests {
@@ -346,36 +368,8 @@ header {
 
     /* Олень */
 .deer {
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 45vw;
-
-    background-image: url("../img/winter.gif");
-    background-size: cover;
-
-    -webkit-mask-image: url("../img/deer-head.png");
-    mask-image: url("../img/deer-head.png");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: top;
-
-    mask-size: contain;
-
-    opacity: 0;
-    transition: opacity 1s;
+    display: none;
 }
-
-.show .deer {
-    opacity: 1;
-    transition: opacity 1s 1s;
-}
-
 
     /* Страница 2 */
     /* Заголовок страницы */
