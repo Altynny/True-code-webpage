@@ -25,6 +25,7 @@ a {
     overflow: hidden;
     min-height: 100vh;
     padding: 0 4vw;
+    margin-bottom: 15vw;
 }
 
 .page:first-of-type {
@@ -379,14 +380,6 @@ header {
     justify-content: center;
     position: relative;
     font-size: 15pt;
-
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .rooms-heading {
-    opacity: 1;
-    transition: opacity 0.75s 0.5s;
 }
 
 .rooms-heading img{
@@ -399,6 +392,7 @@ header {
     /* Комнаты */
 .rooms-container {
     display: flex;
+    flex-direction: column;
 }
 
 .room {
@@ -410,24 +404,6 @@ header {
 .room-img {
     min-width: 295px;
     width: 100%;
-    
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .room:nth-child(1) .room-img {
-    opacity: 1;
-    transition: opacity 2s 1s;
-}
-
-.show .room:nth-child(2) .room-img {
-    opacity: 1;
-    transition: opacity 2s 1.25s;
-}
-
-.show .room:nth-child(3) .room-img {
-    opacity: 1;
-    transition: opacity 2s 1.5s;
 }
 
 .room > div {
@@ -439,24 +415,6 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: rgb(220, 220, 220);
-
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .room:nth-child(1)>div {
-    opacity: 1;
-    transition: opacity 1s 2s;
-}
-
-.show .room:nth-child(2)>div {
-    opacity: 1;
-    transition: opacity 1s 2.25s;
-}
-
-.show .room:nth-child(3)>div {
-    opacity: 1;
-    transition: opacity 1s 2.5s;
 }
 
 .room > div > img {
@@ -525,26 +483,12 @@ header {
     transition: background-color 0.5s;
 }
 
-.room-button:hover {
-    background-color: green;
-}
-
-
-
     /* Слайдер */
 .slider {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 80vw;
-
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.show .slider{
-    opacity: 1;
-    transition: opacity 2s 2.75s;
 }
 
 .slider::before {
@@ -689,10 +633,6 @@ header {
     transition: 0.3s ease-in-out;
 }
 
-.check-room:hover {
-    background-color: darkgreen;
-}
-
 .arrowLeft {
     cursor: pointer;
     position: absolute;
@@ -716,15 +656,17 @@ header {
 
 .reserve {
     display: flex;
-    align-content: center;
+    justify-content: center;
     padding-top: 20vw;
     width: 100vw;
     height: fit-content;
 }
 
 .reserve-img {
-    width: 40vw;
-    margin-top: 1.5vw;
+    position: absolute;
+    z-index: -1;
+    top: -15vw;
+    width: 85vw;
     height:min-content;
 }
 
@@ -732,23 +674,20 @@ header {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    transform: translateX(-15vw);
-    width: 40vw;
+    width: 80vw;
 }
 
 .reserve-description img {
     width: 18vw;
-    margin-left: 20vw;
+    align-self: center;
 }
 
 .reserve-description img:nth-child(1) {
-    rotate: 180deg;
-    transform: translateX(2vw);
+    display: none;
 }
 
 .reserve-description img:nth-child(3) {
     margin-top: 1.6vw;
-    transform: translateX(-2vw);
 }
 
 .reserve-description > div {
@@ -764,12 +703,12 @@ header {
 }
 
 .welcome {
-    font-size: 1.6vw;
+    font-size: 12pt;
     font-weight: bolder;
 }
 
 .reserve-text {
-    font-size: 1.5vw;
+    font-size: 10pt;
     padding-bottom: 1vw;
 }
 
@@ -777,31 +716,22 @@ header {
     z-index: 2;
     white-space: nowrap;
     display: flex;
-    font-size: 1.6vw;
+    font-size: 10pt;
     font-weight: bolder;
     align-self: center;
     align-items: center;
     cursor: pointer;
     transform: translateY(4.2vw);
-    margin-left: 16.5vw;
-    height: 3vw;
+    padding: 1vw;
     background-color: rgb(255, 217, 0);
     outline: 0.2vw rgb(116, 107, 14) solid;
     outline-offset: 0.15vw;
     border-radius: 5%;
-    transition: 0.3s ease-in-out;
 }
 
-.check-reserve:hover {
-    background-color: darkgreen;
-}
 
 .reserve-deer {
-    padding-top: 2vw;
-    z-index: 1;
-    width: 35vw;
-    height: min-content;
-    transform: translateX(-21vw);
+    display: none;
 }
 
 
