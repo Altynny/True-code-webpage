@@ -21,6 +21,8 @@ a {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    overflow: hidden;
     min-height: 100vh;
     padding: 0 4vw;
 }
@@ -540,10 +542,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10vw;
-    margin-top: 10vw;
     width: 80vw;
-    height: 30vw;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.show .slider{
+    opacity: 1;
+    transition: opacity 2s 2.75s;
 }
 
 .slider::before {
@@ -812,7 +819,6 @@ header {
     justify-content: center;
     align-items: center;
     padding-top: 10vw;
-    width: 100vw;
 }
 
 .video-slider-heading {
@@ -921,8 +927,14 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(-50vw);
     width: 100vw;
+    margin-bottom: 25vw;
+
+    opacity: 0;
+}
+
+.calendar.animated.show {
+    opacity: 1;
 }
 
 .calendar-heading {
@@ -1001,13 +1013,14 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(-60vw);
     width: 100vw;
 }
 
 .way-heading {
     display: flex;
     flex-direction: column;
+    position: relative;
+    margin-bottom: 10vw;
 }
 
 .way-heading div {
@@ -1015,14 +1028,14 @@ header {
 }
 
 .way-heading img {
-    transform:translate(13vw, 6vw);
+    position: absolute;
+    transform: translate(10vw, 6vw);
     width: 15vw;
-    rotate: 270deg;
+    rotate: -90deg;
 }
 
 .footer {
     display: flex;
-    transform: translateY(-20vw);
     justify-content: center;
     align-items: center;
     gap: 4vw;
