@@ -42,8 +42,6 @@ header {
     z-index: 3;
     width: 100vw;
     display: flex;
-    
-    background: linear-gradient(to bottom, rgb(240, 240, 240) 20%, transparent 75%);
 }
 
 .burger {
@@ -440,6 +438,7 @@ header {
     justify-content: space-between;
     border-top: 1px solid gray;
     border-left: 2px solid green;
+    background-color: rgb(220, 220, 220);
 }
 
 .room-price {

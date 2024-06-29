@@ -494,6 +494,7 @@ header {
     justify-content: space-between;
     border-top: 1px solid gray;
     border-left: 2px solid green;
+    background-color: rgb(220, 220, 220);
 }
 
 .room-price {
